@@ -1,0 +1,32 @@
+<!-- <div class="container-fluid d-flex flex-wrap">
+<button class="btn btn-primary tour-location" (click)="handleNevigateTour()">
+  Add Tour Location
+</button> -->
+<div class="mt-3 p-5">
+  <table class="table table-secondary">
+    <thead>
+      <tr>
+        <th>PlaceName</th>
+        <th>Place Category</th>
+        <th>Place Description</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of placeList">
+        <td>{{ item.placeName }}</td>
+        <td>{{ item.placeCategory }}</td>
+        <td>{{ item.placeDescription }}</td>
+        <td>
+          <button
+            class="btn btn-outline-danger ms-2"
+            (click)="handleDeletePlace(item.id)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- </div> -->

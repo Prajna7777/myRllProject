@@ -1,0 +1,48 @@
+<div class="container-fluid d-flex flex-wrap">
+  <div class="container pb-5 bg-light">
+    <div class="row">
+      <div class="col-md-8">
+        <label for="exampleInputEmail1">Comment</label>
+        <input type="text" class="form-control" id="comment" />
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-primary ms-5 mt-3" (click)="handleSubmit()">
+          Submit Comment
+        </button>
+      </div>
+    </div>
+  </div>
+  <table class="table table-secondary table-striped  table-hover">
+    <thead>
+      <tr>
+        <th>Location</th>
+        <th>UserName</th>
+        <th>Comment</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of List">
+        <td>{{ item.location }}</td>
+        <td>{{ item.userName }}</td>
+        <td>{{ item.text }}</td>
+        <td>
+          <button
+            class="btn btn-outline-dark"
+            [disabled]="item.userID != UserID"
+            (click)="handleEditComment(item.text, item.id)"
+          >
+            Edit
+          </button>
+          <button
+            class="btn btn-outline-danger ms-2"
+            [disabled]="item.userID != UserID"
+            (click)="handleDeleteComment(item.id)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

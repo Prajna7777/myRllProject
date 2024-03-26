@@ -1,0 +1,9 @@
+.container-fluid{
+    margin: 80px 50px 50px 50px;
+}
+
+.tour-location{
+    position: absolute;
+    top: 80px;
+    right: 100px;
+}

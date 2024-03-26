@@ -1,0 +1,44 @@
+<button class="btn btn-success tour-location" (click)="handleBookTour()">
+  Add Place
+</button>
+<div class="mt-5 p-5">
+  <table class="table table-hover table-striped table-secondary">
+    <thead>
+      <tr>
+        <th>PlaceName</th>
+        <th>Place Category</th>
+        <th>Place Description</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of placeList">
+        <td>{{ item.placeName }}</td>
+        <td>{{ item.placeCategory }}</td>
+        <td>{{ item.placeDescription }}</td>
+        <td>
+          <button
+            class="btn btn-outline-dark"
+            [disabled]="item.userID !== userID"
+            (click)="handleEditPlace(item)"
+          >
+            Edit
+          </button>
+          <button
+            class="btn btn-outline-danger mx-2"
+            [disabled]="item.userID !== userID"
+            (click)="handleDeletePlace(item.id)"
+          >
+            Delete
+          </button>
+          <button
+            class="btn btn-outline-primary"
+            (click)="handleAddExperience(item)"
+          >
+            Add Experience
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

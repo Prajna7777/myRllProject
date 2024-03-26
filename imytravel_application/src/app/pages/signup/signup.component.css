@@ -1,0 +1,43 @@
+.container-fluid {
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .container-fluid .sub-container {
+    height: fit-content;
+    width: 400px;
+    border: 0.5px solid lightgrey;
+    border-radius: 50px;
+  }
+  
+  input.ng-touched.ng-invalid {
+    border: 1px solid red;
+  }
+  
+  .blue {
+    color: #4186f3;
+  }
+  
+  .orange {
+    color: #eb4534;
+  }
+  
+  .yellow {
+    color: #fbbf04;
+  }
+  
+  .green {
+    color: #32a951;
+  }
+  
+  .l-grey {
+    color: grey;
+  }
+
+  #login {
+    /* background: black url('../../../assets/images/bg10.jpg') no-repeat top center fixed; */
+    background: black url('../../../assets/images/bg1.jpg') no-repeat top center fixed;
+    background-size: cover;
+}
+  
+  

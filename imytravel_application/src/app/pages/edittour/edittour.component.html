@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <table class="table table-secondary">
+    <thead>
+      <tr>
+        <th>Location</th>
+        <th>UserName</th>
+        <th>Comment</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of List">
+        <td>{{ item.location }}</td>
+        <td>{{ item.userName }}</td>
+        <td>{{ item.text }}</td>
+        <td>
+          <button
+            class="btn btn-outline-danger ms-2"
+            (click)="handleDeleteComment(item.id)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

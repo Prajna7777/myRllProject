@@ -1,0 +1,199 @@
+<div class="container-fluid">
+  <div class="sub-container border p-5">
+    <h4 class="mb-4 fs-4 text-primary" style="font-weight: 500">
+      Add Experience
+    </h4>
+    <form>
+      <div class="d-flex">
+        <div class="form-group mb-4 w-50 me-1">
+          <label for="exampleInputEmail1">Place Name</label>
+          <input type="text" class="form-control" id="placeName" disabled />
+          <small
+            id="placeHelp"
+            class="form-text text-danger"
+            style="display: none"
+            >Place Name Is Required</small
+          >
+        </div>
+        <div class="form-group mb-4 w-50">
+          <label for="exampleInputPassword1">Place Category</label>
+          <input type="text" class="form-control" id="placeCategory" disabled />
+          <small
+            id="placeCategoryHelp"
+            class="form-text text-danger"
+            style="display: none"
+            >Place Category Is Required</small
+          >
+        </div>
+      </div>
+      <div class="form-group mb-4">
+        <label for="exampleInputPassword1">Place Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="placeDescription"
+          disabled
+        />
+        <small
+          id="placeDescriptionHelp"
+          class="form-text text-danger"
+          style="display: none"
+          >Place Description</small
+        >
+      </div>
+      <div class="d-flex">
+        <div class="form-group mb-4 w-50 me-1">
+          <label for="exampleInputPassword1">Image</label>
+          <input type="text" class="form-control" id="image" />
+          <small
+            id="imageHelp"
+            class="form-text text-danger"
+            style="display: none"
+            >Please Enter Image Url</small
+          >
+        </div>
+        <div class="form-group mb-4 w-50">
+          <label for="exampleInputPassword1">Cost Of Travel</label>
+          <input type="number" class="form-control" id="costOfTravel" />
+          <small
+            id="costOfTravelHelp"
+            class="form-text text-danger"
+            style="display: none"
+            >Please Enter Cost Of Travel</small
+          >
+        </div>
+      </div>
+      <div class="d-flex">
+        <div class="form-group mb-4 w-50 me-1">
+          <label for="exampleInputPassword1">Heritages</label>
+          <input type="text" class="form-control" id="heritages" />
+          <small
+            id="heritagesHelp"
+            class="form-text text-danger"
+            style="display: none"
+            >Please Enter Heritages</small
+          >
+        </div>
+        <div class="form-group mb-4 w-50">
+          <label for="exampleInputPassword1">PlacesToVisit</label>
+          <input type="text" class="form-control" id="placesToVisit" />
+          <small
+            id="placesToVisitHelp"
+            class="form-text text-danger"
+            style="display: none"
+            >Please Enter Places To Visit</small
+          >
+        </div>
+      </div>
+      <div class="d-flex">
+        <div class="form-group mb-4 w-50 me-1">
+          <label for="exampleInputPassword1">Accessibility</label>
+          <input type="text" class="form-control" id="accessibility" />
+          <small
+            id="accessibilityHelp"
+            class="form-text text-danger"
+            style="display: none"
+            >Please Enter Accessibility</small
+          >
+        </div>
+        <div class="form-group mb-4 w-50">
+          <label for="exampleInputPassword1">Transportation</label>
+          <input type="text" class="form-control" id="transportation" />
+          <small
+            id="transportationHelp"
+            class="form-text text-danger"
+            style="display: none"
+            >Please Enter Transportation</small
+          >
+        </div>
+      </div>
+      <div class="d-flex">
+        <div class="form-group mb-4 w-50 me-1">
+          <label for="exampleInputPassword1">climate</label>
+          <input type="text" class="form-control" id="climate" />
+          <small
+            id="climateHelp"
+            class="form-text text-danger"
+            style="display: none"
+            >Please Enter Climate</small
+          >
+        </div>
+        <div class="form-group mb-4 w-50">
+          <label for="exampleInputPassword1">Safety</label>
+          <input type="text" class="form-control" id="safety" />
+          <small
+            id="safetyHelp"
+            class="form-text text-danger"
+            style="display: none"
+            >Please Enter Safety</small
+          >
+        </div>
+      </div>
+      <button
+        type="button"
+        class="btn btn-primary float-start"
+        (click)="handleSubmit()"
+      >
+        Submit
+      </button>
+      <button
+        type="button"
+        class="btn btn-light float-end"
+        (click)="handleClear()"
+      >
+        Clear
+      </button>
+    </form>
+  </div>
+  <div class="sub-container1 mt-2 p-2">
+    <table class="table">
+      <thead>
+        <tr class="mb-1">
+          <th>Image</th>
+          <th>CostOfTravel</th>
+          <th>Heritages</th>
+          <th>PlacesToVisit</th>
+          <th>Accessibility</th>
+          <th>Transportation</th>
+          <th>climate</th>
+          <th>Safety</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="mt-1">
+        <tr *ngFor="let item of List">
+          <td><img src="{{ item.images }}" class="image" /></td>
+          <td>{{ item.costOfTravel }}</td>
+          <td>{{ item.heritages }}</td>
+          <td>{{ item.placesToVisit }}</td>
+          <td>{{ item.accessibility }}</td>
+          <td>{{ item.transportation }}</td>
+          <td>{{ item.climate }}</td>
+          <td>{{ item.safety }}</td>
+          <td>
+            <button
+              class="btn btn-outline-dark"
+              [disabled]="item.userID !== userID"
+              (click)="handleEditExperience(item)"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-outline-danger mx-2"
+              [disabled]="item.userID !== userID"
+              (click)="handleDeleteExperience(item.id)"
+            >
+              Delete
+            </button>
+            <button
+              class="btn btn-outline-primary"
+              (click)="handleAddComment(item)"
+            >
+              Add Comment
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

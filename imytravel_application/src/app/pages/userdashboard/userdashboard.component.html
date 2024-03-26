@@ -1,0 +1,16 @@
+
+<div class="container-fluid">
+    <div class="header" >
+      <div class="row pt-3 px-3 m-0">
+        <div class="col-4 text-white fs-4 mt-2">User Dashboard</div>
+        <div class="col-4 text-white fs-4 mt-2">IMyTravel</div>
+        <div class="col-4 text-white fs-6 mt-2 nav-button">
+          <a (click)="handleNavHome()">Places</a>&nbsp; | &nbsp;<a (click)="handleNavSignOut()">SignOut</a>
+        </div>
+      </div>
+    </div>
+    <div class="body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  

@@ -1,0 +1,42 @@
+<div id = "login">
+<div class="container-fluid">
+  <div class="side2 border p-5">
+    <form>
+      <div class="form-group mb-4">
+        <label for="exampleInputEmail1">Place Name</label>
+        <input type="text" class="form-control" id="placeName" />
+        <small
+          id="placeHelp"
+          class="form-text text-danger"
+          style="display: none"
+          >Place Name Is Required</small
+        >
+      </div>
+      <div class="form-group mb-4">
+        <label for="exampleInputPassword1">Place Category</label>
+        <input type="text" class="form-control" id="placeCategory" />
+        <small
+          id="placeCategoryHelp"
+          class="form-text text-danger"
+          style="display: none"
+          >Place Category Is Required</small
+        >
+      </div>
+      <div class="form-group mb-4">
+        <label for="exampleInputPassword1">Place Description</label>
+        <input type="text" class="form-control" id="placeDescription" />
+        <small
+          id="placeDescriptionHelp"
+          class="form-text text-danger"
+          style="display: none"
+          >Place Description</small
+        >
+      </div>
+     <button type="button" class="btn btn-success" (click)="handleSubmit()">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+
+

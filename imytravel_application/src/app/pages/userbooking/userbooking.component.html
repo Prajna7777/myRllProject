@@ -1,0 +1,45 @@
+<div class="container-fluid p-3">
+  <table class="table table-secondary">
+    <thead>
+      <tr class="mb-1">
+        <th>Image</th>
+        <th>CostOfTravel</th>
+        <th>Heritages</th>
+        <th>PlacesToVisit</th>
+        <th>Accessibility</th>
+        <th>Transportation</th>
+        <th>climate</th>
+        <th>Safety</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody class="mt-1">
+      <tr *ngFor="let item of List">
+        <td><img src="{{ item.images }}" class="image" /></td>
+        <td>{{ item.costOfTravel }}</td>
+        <td>{{ item.heritages }}</td>
+        <td>{{ item.placesToVisit }}</td>
+        <td>{{ item.accessibility }}</td>
+        <td>{{ item.transportation }}</td>
+        <td>{{ item.climate }}</td>
+        <td>{{ item.safety }}</td>
+        <td>
+          
+          <button
+            class="btn btn-outline-danger mx-2"
+            
+            (click)="handleDeleteExperience(item.id)"
+          >
+            Delete
+          </button>
+          <button
+            class="btn btn-outline-primary"
+            (click)="handleComment(item.id)"
+          >
+            Comments
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
